@@ -4,12 +4,25 @@ function JobForm() {
 
     const [companyName , setCompanyName] = useState("");
     const [role, setRole] = useState("");
-    const [status, setStatus] = useState("");
+    const [status, setStatus] = useState("Applied");
     const [dateApplied, setDateApplied] = useState("");
     const [notes, setNotes] = useState("");
 
+    function handleSubmit(e) {
+  e.preventDefault();
+
+  console.log({
+    companyName,
+    role,
+    status,
+    dateApplied,
+    notes,
+  });
+}
+
+
     return <div>JOB FORM
-        <form>
+        <form onSubmit={handleSubmit}>
             <label>Company Name:</label>
             <input type ="text"  value={companyName} onChange={(e) => setCompanyName(e.target.value)}/>
              <label>Role:</label>
@@ -26,9 +39,11 @@ function JobForm() {
             <input type ="date" value={dateApplied} onChange={(e) => setDateApplied(e.target.value)}/>
                 <label>Notes:</label>
             <input type ="text" value={notes} onChange={(e) => setNotes(e.target.value)}/>
-        </form>
+                <button type="submit">Submit</button>
 
-        <button type="submit">Submit</button>
+            </form>
+
+            
     </div>
 }
 
