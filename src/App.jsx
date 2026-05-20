@@ -1,4 +1,4 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import "./App.css";
 
 import JobForm from "./Job_Form";
@@ -6,18 +6,37 @@ import Job_List from "./Job_List";
 import Status_Filter from "./Status_Filter";
 
 function App() {
-  const [count, setCount] = useState(0);
   const [jobs, setJobs] = useState([]);
+  const [filter, setFilter] = useState("All");
 
+  // ADD JOB
   const addJob = (newJob) => {
-    setJobs([...jobs, newJob]);
-
-
-    const addJob = (newJob) => {
-  setJobs([...jobs, newJob]);
-  console.log("Jobs array:", [...jobs, newJob]);
-};
+    setJobs((prevJobs) => [...prevJobs, newJob]);
   };
+
+  // DELETE JOB
+  const deleteJob = (indexToDelete) => {
+    setJobs((prevJobs) =>
+      prevJobs.filter((_, index) => index !== indexToDelete)
+    );
+  };
+
+  // UPDATE STATUS
+  const updateStatus = (indexToUpdate, newStatus) => {
+    setJobs((prevJobs) =>
+      prevJobs.map((job, index) =>
+        index === indexToUpdate
+          ? { ...job, status: newStatus }
+          : job
+      )
+    );
+  };
+
+  // FILTER LOGIC (derived state)
+  const filteredJobs =
+    filter === "All"
+      ? jobs
+      : jobs.filter((job) => job.status === filter);
 
   return (
     <div className="app">
@@ -27,23 +46,14 @@ function App() {
       <JobForm addJob={addJob} />
 
       {/* Filter */}
-      <Status_Filter />
+      <Status_Filter filter={filter} setFilter={setFilter} />
 
-      {/* Job List */}
-      <Job_List jobs={jobs} />
-
-      {/* Counter (optional - keep for practice) */}
-      <button onClick={() => setCount(count + 1)}>
-        Count is {count}
-      </button>
-
-      <ul>
-  {jobs.map((job, index) => (
-    <li key={index}>
-      {job.title} - {job.company}
-    </li>
-  ))}
-</ul>
+      {/* Job List (IMPORTANT: use filteredJobs) */}
+      <Job_List
+        jobs={filteredJobs}
+        deleteJob={deleteJob}
+        updateStatus={updateStatus}
+      />
     </div>
   );
 }

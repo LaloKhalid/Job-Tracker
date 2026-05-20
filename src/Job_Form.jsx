@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-function JobForm() {
+function JobForm({ addJob }) {
 
     const [companyName , setCompanyName] = useState("");
     const [role, setRole] = useState("");
@@ -11,13 +11,18 @@ function JobForm() {
     function handleSubmit(e) {
   e.preventDefault();
 
-  console.log({
+  const newJob = {
     companyName,
     role,
     status,
     dateApplied,
     notes,
-  });
+  };
+
+   console.log(newJob);
+
+
+    addJob(newJob);
 }
 
 
