@@ -8,13 +8,40 @@ function DashboardStats({ jobs }) {
 
     return (
         <div>
+
             <h2>Dashboard Stats</h2>
 
-            <p>Total Jobs: {totalJobs}</p>
-            <p>Applied: {appliedJobs}</p>
-            <p>Interview: {interviewJobs}</p>
-            <p>Offer: {offerJobs}</p>
-            <p>Rejected: {rejectedJobs}</p>
+            <p>TEST CHANGE</p>
+
+            {/* Cards */}
+            <div>
+
+                <div>
+                    <p>Total Jobs</p>
+                    <p>{totalJobs}</p>
+                </div>
+
+                <div>
+                    <p>Applied</p>
+                    <p>{appliedJobs}</p>
+                </div>
+
+                <div>
+                    <p>Interview</p>
+                    <p>{interviewJobs}</p>
+                </div>
+
+                <div>
+                    <p>Offer</p>
+                    <p>{offerJobs}</p>
+                </div>
+
+                <div>
+                    <p>Rejected</p>
+                    <p>{rejectedJobs}</p>
+                </div>
+
+            </div>
         </div>
     );
 }

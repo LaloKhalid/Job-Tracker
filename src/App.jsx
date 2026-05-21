@@ -55,32 +55,33 @@ function App() {
       ? jobs
       : jobs.filter((job) => job.status === filter);
 
-  return (
-    <div className="app">
+ return (
+  <div>
 
-       <div className="p-6 bg-blue-500 text-white rounded-lg text-xl mt-4">
-  Tailwind is working 🚀
-</div>
+    {/* MAIN AREA */}
+    <main>
+
       <h1>Job Tracker</h1>
 
-      {/* FORM */}
+      {/* Stats */}
+      <DashboardStats jobs={jobs} />
+
+      {/* Form */}
       <JobForm addJob={addJob} />
 
-      {/* FILTER */}
+      {/* Filter */}
       <Status_Filter filter={filter} setFilter={setFilter} />
 
-      {/* LIST */}
+      {/* List */}
       <Job_List
         jobs={filteredJobs}
         deleteJob={deleteJob}
         statusUpdate={statusUpdate}
       />
 
-      <DashboardStats jobs={jobs} />
-    </div>
-
-   
-  );
+    </main>
+  </div>
+);
 }
 
 export default App;
