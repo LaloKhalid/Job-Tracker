@@ -19,6 +19,9 @@ function JobForm({ addJob }) {
     notes,
   };
 
+
+
+
    console.log(newJob);
 
 
