@@ -1,0 +1,143 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #f7f3ef;
+  color: #1f1f1f;
+}
+
+.app {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 40px 20px;
+}
+
+h1 {
+  text-align: center;
+  color: #111;
+  margin-bottom: 30px;
+}
+
+.job-form {
+  background: #fffdfb;
+  padding: 24px;
+  border: 2px solid #111;
+  border-radius: 18px;
+  box-shadow: 8px 8px 0 #111;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 32px;
+}
+
+.job-form label {
+  font-weight: 600;
+  margin-top: 8px;
+}
+
+.job-form input,
+.job-form select,
+.job-form textarea {
+  padding: 12px;
+  border: 1.5px solid #222;
+  border-radius: 10px;
+  background: #fdfdfd;
+  font-size: 16px;
+}
+
+.job-form input:focus,
+.job-form select:focus,
+.job-form textarea:focus {
+  outline: none;
+  border-color: #9bb8a7;
+  box-shadow: 0 0 0 3px #dceade;
+}
+
+button {
+  margin-top: 12px;
+  padding: 12px 18px;
+  border: 2px solid #111;
+  border-radius: 12px;
+  background: #c9d8ff;
+  color: #111;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 4px 4px 0 #111;
+}
+
+button:hover {
+  background: #d8c8f2;
+  transform: translate(1px, 1px);
+  box-shadow: 3px 3px 0 #111;
+}
+
+.job-list {
+  display: grid;
+  gap: 18px;
+}
+
+.job-card {
+  background: #fffdfb;
+  padding: 20px;
+  border: 2px solid #111;
+  border-radius: 16px;
+  box-shadow: 6px 6px 0 #111;
+}
+
+.status {
+  display: inline-block;
+  padding: 6px 10px;
+  border: 1.5px solid #111;
+  border-radius: 999px;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.status.applied {
+  background: #c9d8ff;
+}
+
+.status.interview {
+  background: #fff0b8;
+}
+
+.status.offer {
+  background: #cdeccd;
+}
+
+.status.rejected {
+  background: #f5c7c7;
+}
+
+
+.job-form label {
+  margin-bottom: -6px;
+}
+
+button {
+  width: fit-content;
+  align-self: flex-start;
+}
+
+.job-card h3 {
+  margin-top: 0;
+  margin-bottom: 12px;
+  font-size: 22px;
+}
+
+.job-card p {
+  margin: 8px 0;
+  color: #333;
+}
+
+.job-card select {
+  margin-top: 16px;
+  margin-right: 12px;
+  padding: 10px;
+  border: 1.5px solid #111;
+  border-radius: 10px;
+  background: #fffdfb;
+}
+
+.job-card button {
+  background: #f5c7c7;
+}

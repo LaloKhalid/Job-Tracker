@@ -2,9 +2,9 @@ import Job_Item from "./Job_Item";
 
 function Job_List({ jobs, deleteJob, statusUpdate }) {
   return (
-    <div>
+    <div className="job-list">
       <h2>Job List</h2>
-
+<div className="job-list">
       {jobs.map((job, index) => (
         <Job_Item
           key={index}
@@ -14,6 +14,7 @@ function Job_List({ jobs, deleteJob, statusUpdate }) {
           index={index}
         />
       ))}
+      </div>
     </div>
   );
 }

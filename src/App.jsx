@@ -56,7 +56,7 @@ function App() {
       : jobs.filter((job) => job.status === filter);
 
  return (
-  <div>
+  <div className="app">
 
     {/* MAIN AREA */}
     <main>

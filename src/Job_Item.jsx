@@ -1,13 +1,29 @@
 function Job_Item({ job, deleteJob, index, statusUpdate }) {
-    return (
-        <div style={{ border: "1px solid black", margin: "10px", padding: "10px" }}>
-            <h3>{job.role}</h3>
-            <p>{job.companyName}</p>
-            <p>{job.status}</p>
-            <p>{job.dateApplied}</p>
+  return (
+    <div className="job-card">
+      <h3>{job.role}</h3>
 
+      <p>
+        <strong>Company:</strong> {job.companyName}
+      </p>
 
-              {/* STATUS CONTROL */}
+      <p>
+        <strong>Applied On:</strong> {job.dateApplied}
+      </p>
+
+      <p>
+        <strong>Notes:</strong> {job.notes}
+      </p>
+
+      {/* STATUS BADGE */}
+      <span className={`status ${job.status.toLowerCase()}`}>
+        {job.status}
+      </span>
+
+      <br />
+      <br />
+
+      {/* STATUS CONTROL */}
       <select
         value={job.status || "Applied"}
         onChange={(e) => statusUpdate(index, e.target.value)}
@@ -18,12 +34,11 @@ function Job_Item({ job, deleteJob, index, statusUpdate }) {
         <option value="Rejected">Rejected</option>
       </select>
 
-            <button onClick={() => deleteJob(index)}>
-                Delete
-            </button>
-        </div>
-    );
+      <button onClick={() => deleteJob(index)}>
+        Delete
+      </button>
+    </div>
+  );
 }
 
 export default Job_Item;
-

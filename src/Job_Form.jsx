@@ -24,7 +24,7 @@ function JobForm({ addJob }) {
     }
 
     return (
-        <div>
+        <div className="job-form">
 
             <div>
 
@@ -90,11 +90,10 @@ function JobForm({ addJob }) {
                         <label>
                             Notes:
                         </label>
-                        <input
-                            type="text"
-                            value={notes}
-                            onChange={(e) => setNotes(e.target.value)}
-                        />
+                       <textarea
+                                value={notes}
+                                onChange={(e) => setNotes(e.target.value)}
+                            />
                     </div>
 
                     {/* Button */}
