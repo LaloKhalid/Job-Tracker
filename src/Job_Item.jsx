@@ -1,4 +1,4 @@
-function Job_Item({ job, deleteJob, index, statusUpdate }) {
+function Job_Item({ job, deleteJob, index, statusUpdate, setEditingJob }) {
   return (
     <div className="job-card">
       <h3>{job.role}</h3>
@@ -34,6 +34,12 @@ function Job_Item({ job, deleteJob, index, statusUpdate }) {
         <option value="Rejected">Rejected</option>
       </select>
 
+      {/* EDIT BUTTON */}
+      <button onClick={() => setEditingJob(job)}>
+        Edit
+      </button>
+
+      {/* DELETE BUTTON */}
       <button onClick={() => deleteJob(index)}>
         Delete
       </button>
